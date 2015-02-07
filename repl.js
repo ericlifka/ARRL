@@ -36,5 +36,7 @@
                 this.value = "";
             }
         });
+
+        input.focus();
     };
 })();
