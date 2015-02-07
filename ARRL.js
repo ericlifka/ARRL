@@ -70,6 +70,17 @@ window.ARRL = (function () {
         return callable;
     });
 
+    GLOBAL_ENV.putSpecial('var', function (params, env) {
+        if (params.length !== 2) return null;
+
+        var symbol = params[0];
+        var statement = params[1];
+
+        var result = eval(statement, env);
+        env.putSymbol(symbol, result);
+        return result;
+    });
+
     function eval(statement, env) {
         if (Array.isArray(statement)) {
             return eval_array(statement, env);
