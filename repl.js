@@ -22,8 +22,15 @@
                 var inputString = this.value;
                 create("div", "input-line", output, document.createTextNode("$ " + inputString));
 
-                var inputLiteral = eval("(" + inputString + ")");
-                var result = ARRL(inputLiteral);
+                var inputLiteral, result;
+                try {
+                    inputLiteral = eval("(" + inputString + ")");
+                    result = ARRL(inputLiteral);
+                }
+                catch (e) {
+                    result = e;
+                }
+
                 create("div", "output-line", output, document.createTextNode(">>> " + result));
 
                 this.value = "";
