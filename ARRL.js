@@ -48,11 +48,19 @@ window.ARRL = (function () {
             return callable(params, env);
         }
         else if (callable.func) {
-            return callable(eval_params(params));
+            return callable(eval_params(params, env));
         }
         else {
             return null;
         }
+    }
+
+    function eval_params(params, env) {
+        var evaluated = [];
+        params.forEach(function (statement) {
+            evaluated.push(eval(statement, env));
+        });
+        return evaluated;
     }
 
     return function (array) {
