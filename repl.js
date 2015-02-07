@@ -14,7 +14,8 @@
     window['onload'] = function () {
         var content = create("div", "content", document.body);
         var output = create("div", "output", content);
-        var input = create("input", "input", content);
+        var input_wrapper = create("div", "input", content, document.createTextNode("$ "));
+        var input = create("input", null, input_wrapper);
 
         input.addEventListener("keydown", function (event) {
             if (event.keyIdentifier === "Enter") {
