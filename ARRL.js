@@ -20,6 +20,14 @@ window.ARRL = (function () {
     })();
     var GLOBAL_ENV = Environment();
 
+    GLOBAL_ENV.putFunc('+', function (params) {
+        var sum = 0;
+        params.forEach(function (num) {
+            sum += num;
+        });
+        return sum;
+    });
+
     function eval(statement, env) {
         if (Array.isArray(statement)) {
             return eval_array(statement, env);
