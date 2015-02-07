@@ -21,6 +21,7 @@
             if (event.keyIdentifier === "Enter") {
                 event.stopPropagation();
                 var inputString = this.value;
+                this.value = "";
                 create("div", "input-line", output, document.createTextNode("$ " + inputString));
 
                 var inputLiteral, result;
@@ -33,8 +34,7 @@
                 }
 
                 create("div", "output-line", output, document.createTextNode(">>> " + result));
-
-                this.value = "";
+                content.scrollTop = content.scrollHeight;
             }
         });
 
