@@ -12,11 +12,11 @@ html, body {
     margin-top: 100px;
 }
 
-.content .input {
-    width: 100%;
+.content .input input {
+    width: 90%;
     border: 0;
 }
 
-.content .input:focus {
+.content .input input:focus {
     outline: none 0;
 }
