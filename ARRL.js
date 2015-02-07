@@ -27,6 +27,7 @@ window.ARRL = (function () {
             var e = new Env();
             e.parent = parent;
             e.symbols = {};
+            return e;
         };
     })();
     var GLOBAL_ENV = Environment();
