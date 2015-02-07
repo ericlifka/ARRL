@@ -1,6 +1,8 @@
 window.ARRL = (function () {
     var Environment = (function () {
-        function Env() { }
+        function Env() {
+        }
+
         Env.prototype.lookupSymbol = function (symbol) {
             if (this.symbols.hasOwnProperty(symbol)) {
                 return this.symbols[symbol];
@@ -38,6 +40,25 @@ window.ARRL = (function () {
             sum += num;
         });
         return sum;
+    });
+
+    GLOBAL_ENV.putSpecial('fn', function (params, env) {
+        if (params.length < 2) return null;
+
+        var formals = params[0];
+        var body = params.slice(1);
+
+        var callable = function (fnParams) {
+            var invocationEnvironment = Environment(env);
+            var sym, val;
+            for (var i = 0; i < formals.length; i++) {
+                sym = formals[i];
+                val = fnParams[i];
+
+                invocationEnvironment.putSymbol(sym, val);
+            }
+        };
+
     });
 
     function eval(statement, env) {
