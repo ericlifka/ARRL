@@ -1,9 +1,12 @@
 (function () {
-    function create(type, cls, parent) {
+    function create(type, cls, parent, child) {
         var pane = document.createElement(type);
         pane.classList.add(cls);
         if (parent && parent.appendChild) {
             parent.appendChild(pane);
+        }
+        if (child) {
+            pane.appendChild(child);
         }
         return pane;
     }
@@ -18,7 +21,7 @@
                 event.stopPropagation();
                 var inputString = this.value;
                 this.value = "";
-
+                create("div", "line", output, document.createTextNode(inputString));
             }
         });
     };
