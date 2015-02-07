@@ -20,7 +20,25 @@ window.ARRL = (function () {
     })();
     var GLOBAL_ENV = Environment();
 
-    return function run(array) {
+    function eval(statement, env) {
+        if (Array.isArray(statement)) {
+            return eval_array(statement, env);
+        }
 
+        else if (typeof statement === "string") {
+            return env.lookupSymbol(statement);
+        }
+
+        else {
+            return statement;
+        }
+    }
+
+    function eval_array(array, env) {
+
+    }
+
+    return function (array) {
+        eval(array, GLOBAL_ENV);
     };
 })();
