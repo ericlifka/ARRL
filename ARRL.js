@@ -65,6 +65,9 @@ window.ARRL = (function () {
 
             return result;
         };
+
+        callable.func = true;
+        return callable;
     });
 
     function eval(statement, env) {
@@ -85,7 +88,7 @@ window.ARRL = (function () {
         if (array.length === 0) {
             return array;
         }
-        var callable = env.lookupSymbol(array[0]);
+        var callable = eval(array[0], env);
         if (!callable) {
             return callable;
         }
