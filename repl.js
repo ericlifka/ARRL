@@ -21,6 +21,9 @@
                 event.stopPropagation();
                 var inputString = this.value;
                 this.value = "";
+
+                console.log(eval("(" + inputString + ")"));
+
                 create("div", "line", output, document.createTextNode(inputString));
             }
         });
