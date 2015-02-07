@@ -18,8 +18,9 @@ window.ARRL = (function () {
             e.symbols = {};
         };
     })();
+    var GLOBAL_ENV = Environment();
 
-    return function rum(array) {
+    return function run(array) {
 
     };
 })();
