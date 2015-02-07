@@ -38,6 +38,11 @@ window.ARRL = (function () {
         if (array.length === 0) {
             return array;
         }
+        var callable = env.lookupSymbol(array[0]);
+        if (!callable) {
+            return callable;
+        }
+        var params = array.slice(1);
     }
 
     return function (array) {
