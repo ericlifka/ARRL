@@ -12,6 +12,17 @@ window.ARRL = (function () {
                 return null;
             }
         };
+        Env.prototype.putFunc = function (symbol, callable) {
+            callable.func = true;
+            this.putSymbol(symbol, callable);
+        };
+        Env.prototype.putSpecial = function (symbol, callable) {
+            callable.special = true;
+            this.putSymbol(symbol, callable);
+        };
+        Env.prototype.putSymbol = function (symbol, value) {
+            this.symbols[symbol] = value;
+        };
         return function (parent) {
             var e = new Env();
             e.parent = parent;
