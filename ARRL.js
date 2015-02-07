@@ -43,6 +43,16 @@ window.ARRL = (function () {
             return callable;
         }
         var params = array.slice(1);
+
+        if (callable.special) {
+            return callable(params, env);
+        }
+        else if (callable.func) {
+            return callable(eval_params(params));
+        }
+        else {
+            return null;
+        }
     }
 
     return function (array) {
