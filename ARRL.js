@@ -57,8 +57,14 @@ window.ARRL = (function () {
 
                 invocationEnvironment.putSymbol(sym, val);
             }
-        };
 
+            var result = null;
+            body.forEach(function (statement) {
+                result = eval(statement, invocationEnvironment);
+            });
+
+            return result;
+        };
     });
 
     function eval(statement, env) {
