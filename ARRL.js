@@ -84,6 +84,6 @@ window.ARRL = (function () {
     }
 
     return function (array) {
-        eval(array, GLOBAL_ENV);
+        return eval(array, GLOBAL_ENV);
     };
 })();

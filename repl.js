@@ -20,11 +20,13 @@
             if (event.keyIdentifier === "Enter") {
                 event.stopPropagation();
                 var inputString = this.value;
+                create("div", "input-line", output, document.createTextNode("$ " + inputString));
+
+                var inputLiteral = eval("(" + inputString + ")");
+                var result = ARRL(inputLiteral);
+                create("div", "output-line", output, document.createTextNode(">>> " + result));
+
                 this.value = "";
-
-                console.log(eval("(" + inputString + ")"));
-
-                create("div", "line", output, document.createTextNode(inputString));
             }
         });
     };
