@@ -35,7 +35,9 @@ window.ARRL = (function () {
     }
 
     function eval_array(array, env) {
-
+        if (array.length === 0) {
+            return array;
+        }
     }
 
     return function (array) {
