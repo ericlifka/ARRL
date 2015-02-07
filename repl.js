@@ -12,5 +12,14 @@
         var content = create("div", "content", document.body);
         var output = create("div", "output", content);
         var input = create("input", "input", content);
+
+        input.addEventListener("keydown", function (event) {
+            if (event.keyIdentifier === "Enter") {
+                event.stopPropagation();
+                var inputString = this.value;
+                this.value = "";
+
+            }
+        });
     };
 })();
