@@ -82,7 +82,10 @@ window.ARRL = (function () {
     });
 
     GLOBAL_ENV.putSpecial('set', function (params, env) {
+        if (params.length !== 2) return null;
 
+        var symbol = params[0];
+        var statement = params[1];
     });
 
     function eval(statement, env) {
