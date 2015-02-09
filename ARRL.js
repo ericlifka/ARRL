@@ -81,6 +81,10 @@ window.ARRL = (function () {
         return result;
     });
 
+    GLOBAL_ENV.putSpecial('set', function (params, env) {
+
+    });
+
     function eval(statement, env) {
         if (Array.isArray(statement)) {
             return eval_array(statement, env);
