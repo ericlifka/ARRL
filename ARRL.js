@@ -25,6 +25,9 @@ window.ARRL = (function () {
         Env.prototype.putSymbol = function (symbol, value) {
             this.symbols[symbol] = value;
         };
+        Env.prototype.symbolHasValue = function (symbol) {
+            return this.symbols.hasOwnProperty(symbol);
+        };
         return function (parent) {
             var e = new Env();
             e.parent = parent;
