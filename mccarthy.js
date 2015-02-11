@@ -64,7 +64,15 @@
 
     }
 
+    function cons(x, y) {
+
+    }
+
     function car(expr) {
+
+    }
+
+    function cdr(expr) {
 
     }
 
@@ -72,7 +80,19 @@
 
     }
 
+    function cadr(expr) {
+
+    }
+
+    function caddr(expr) {
+
+    }
+
     function assoc(expr, env) {
+
+    }
+
+    function evcon(c, env) {
 
     }
 
