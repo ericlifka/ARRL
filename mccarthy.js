@@ -49,7 +49,7 @@
 
         else if (eq(caar(expr), 'label')) {
             return eval(cons(caddar(expr), cdr(expr)),
-                        cons(list(cadar(expr), car(expr), env)));
+                        cons(list(cadar(expr), car(expr)), env));
         }
 
         else if (eq(caar(expr), 'lambda')) {
@@ -71,6 +71,14 @@
 
     }
 
+    function list() {
+
+    }
+
+    function append() {
+
+    }
+
     function car(expr) {
 
     }
@@ -87,7 +95,15 @@
 
     }
 
+    function cadar(expr) {
+
+    }
+
     function caddr(expr) {
+
+    }
+
+    function caddar(expr) {
 
     }
 
@@ -95,7 +111,15 @@
 
     }
 
+    function pair() {
+
+    }
+
     function evcon(c, env) {
+
+    }
+
+    function evlis(m, env) {
 
     }
 
