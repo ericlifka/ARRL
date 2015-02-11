@@ -2,7 +2,7 @@
 
     function eval(expr, env) {
         if (atom(expr)) {
-
+            return assoc(expr, env);
         }
 
         else if (atom(car(expr))) {
@@ -31,6 +31,10 @@
     }
 
     function caar(expr) {
+
+    }
+
+    function assoc(expr, env) {
 
     }
 
