@@ -6,7 +6,25 @@
         }
 
         else if (atom(car(expr))) {
+            var first = car(expr);
 
+            if (eq(first, 'quote')) {
+
+            } else if (eq(first, 'atom')) {
+
+            } else if (eq(first, 'eq')) {
+
+            } else if (eq(first, 'car')) {
+
+            } else if (eq(first, 'cdr')) {
+
+            } else if (eq(first, 'cons')) {
+
+            } else if (eq(first, 'cond')) {
+
+            } else {
+
+            }
         }
 
         else if (eq(caar(expr), 'label')) {
