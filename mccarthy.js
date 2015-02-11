@@ -9,35 +9,41 @@
             var first = car(expr);
 
             if (eq(first, 'quote')) {
-
+                return cadr(expr);
             }
 
             else if (eq(first, 'atom')) {
-
+                return atom(eval(cadr(expr), env));
             }
 
             else if (eq(first, 'eq')) {
-
+                return eq(
+                    eval(cadr(expr), env),
+                    eval(caddr(expr), env));
             }
 
             else if (eq(first, 'car')) {
-
+                return car(eval(cadr(expr), env));
             }
 
             else if (eq(first, 'cdr')) {
-
+                return cdr(eval(cadr(expr), env));
             }
 
             else if (eq(first, 'cons')) {
-
+                return cons(
+                    eval(cadr(expr), env),
+                    eval(caddr(expr), env));
             }
 
             else if (eq(first, 'cond')) {
-
+                return evcon(cdr(expr), env);
             }
 
             else {
-
+                return eval(cons(assoc(car(expr), env),
+                                cdr(expr)),
+                            env);
             }
         }
 
