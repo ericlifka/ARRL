@@ -18,4 +18,20 @@
         }
     }
 
+    function atom(expr) {
+
+    }
+
+    function eq(x, y) {
+
+    }
+
+    function car(expr) {
+
+    }
+
+    function caar(expr) {
+
+    }
+
 }());
