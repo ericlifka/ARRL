@@ -89,6 +89,20 @@ window.ARRL = (function () {
 
         var symbol = params[0];
         var statement = params[1];
+
+        var ePtr = env;
+        while (ePtr) {
+            if (ePtr.symbolHasValue(symbol)) {
+                var result = eval(statement, env);
+                ePtr.putSymbol(symbol, result);
+
+                return result;
+            }
+
+            ePtr = ePtr.parent;
+        }
+
+        return null;
     });
 
     function eval(statement, env) {
