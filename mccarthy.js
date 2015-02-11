@@ -48,11 +48,14 @@
         }
 
         else if (eq(caar(expr), 'label')) {
-
+            return eval(cons(caddar(expr), cdr(expr)),
+                        cons(list(cadar(expr), car(expr), env)));
         }
 
         else if (eq(caar(expr), 'lambda')) {
-
+            return eval(caddar(expr),
+                        append(pair(cadar(expr), evlis(cdr(expr), env)),
+                                env));
         }
     }
 
