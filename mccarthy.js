@@ -103,8 +103,13 @@
         return eq(expr, []);
     }
 
-    function append() {
-
+    function append(x, y) {
+        if (isNull(x) === true) {
+            return y;
+        }
+        else {
+            return cons(car(x), append(cdr(x), y));
+        }
     }
 
     function car(expr) {
