@@ -68,7 +68,13 @@
     }
 
     function cons(x, y) {
+        if (!y) {
+            y = [];
+        }
 
+        var arr = y.slice();
+        arr.unshift(x);
+        return arr;
     }
 
     function list() {
