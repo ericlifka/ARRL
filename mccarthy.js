@@ -88,23 +88,23 @@
     }
 
     function caar(expr) {
-
+        return car(car(expr));
     }
 
     function cadr(expr) {
-
+        return car(cdr(expr));
     }
 
     function cadar(expr) {
-
+        return car(cdr(car(expr)));
     }
 
     function caddr(expr) {
-
+        return car(cdr(cdr(expr)));
     }
 
     function caddar(expr) {
-
+        return car(cdr(cdr(car(expr))));
     }
 
     function assoc(expr, env) {
