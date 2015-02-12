@@ -99,6 +99,10 @@
         return Array.prototype.slice.call(arguments);
     }
 
+    function isNull(expr) {
+        return eq(expr, []);
+    }
+
     function append() {
 
     }
