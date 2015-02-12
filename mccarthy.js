@@ -96,7 +96,7 @@
     }
 
     function list() {
-
+        return Array.prototype.slice.call(arguments);
     }
 
     function append() {
