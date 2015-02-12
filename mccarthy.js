@@ -74,7 +74,15 @@
     }
 
     function eq(x, y) {
-
+        if (x === y) {
+            return true;
+        }
+        else if (x.length === 0 && y.length === 0) {
+            return true;
+        }
+        else {
+            return [];
+        }
     }
 
     function cons(x, y) {
