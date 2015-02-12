@@ -60,7 +60,17 @@
     }
 
     function atom(expr) {
-
+        if (expr.constructor === Array) {
+            if (expr.length === 0) {
+                return true;
+            }
+            else {
+                return [];
+            }
+        }
+        else {
+            return true;
+        }
     }
 
     function eq(x, y) {
