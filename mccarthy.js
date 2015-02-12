@@ -149,7 +149,12 @@
     }
 
     function evcon(c, env) {
-
+        if (eval(caar(c), env) === true) {
+            return eval(cadar(c), env);
+        }
+        else {
+            return evcon(cdr(c), env);
+        }
     }
 
     function evlis(m, env) {
