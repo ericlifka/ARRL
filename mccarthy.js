@@ -80,11 +80,11 @@
     }
 
     function car(expr) {
-
+        return expr[0] || [];
     }
 
     function cdr(expr) {
-
+        return expr.slice(1);
     }
 
     function caar(expr) {
