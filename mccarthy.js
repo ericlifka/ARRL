@@ -158,7 +158,14 @@
     }
 
     function evlis(m, env) {
-
+        if (isNull(m) === true) {
+            return [];
+        }
+        else {
+            return cons(
+                eval(car(m), env),
+                evlis(cdr(m), env));
+        }
     }
 
 }());
