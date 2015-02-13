@@ -180,4 +180,6 @@
         }
     }
 
+    window.eval = eval;
+
 }());
