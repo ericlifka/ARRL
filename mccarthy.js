@@ -141,7 +141,12 @@
     }
 
     function assoc(expr, env) {
-
+        if (eq(caar(env), expr) === true) {
+            return cadar(expr);
+        }
+        else {
+            return assoc(expr, cdr(env));
+        }
     }
 
     function pair(x, y) {
