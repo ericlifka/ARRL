@@ -144,8 +144,15 @@
 
     }
 
-    function pair() {
-
+    function pair(x, y) {
+        if (isNull(x) === true && isNull(y) === true) {
+            return [];
+        }
+        else if (isNull(x) !== true && isNull(y) !== true) {
+            return cons(
+                list(car(x), car(y)),
+                pair(cdr(x), cdr(y)));
+        }
     }
 
     function evcon(c, env) {
