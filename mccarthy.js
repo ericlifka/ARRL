@@ -8,35 +8,35 @@
         else if (atom(car(expr))) {
             var first = car(expr);
 
-            if (eq(first, 'quote')) {
+            if (eq(first, 'quote') === true) {
                 return cadr(expr);
             }
 
-            else if (eq(first, 'atom')) {
+            else if (eq(first, 'atom') === true) {
                 return atom(eval(cadr(expr), env));
             }
 
-            else if (eq(first, 'eq')) {
+            else if (eq(first, 'eq') === true) {
                 return eq(
                     eval(cadr(expr), env),
                     eval(caddr(expr), env));
             }
 
-            else if (eq(first, 'car')) {
+            else if (eq(first, 'car') === true) {
                 return car(eval(cadr(expr), env));
             }
 
-            else if (eq(first, 'cdr')) {
+            else if (eq(first, 'cdr') === true) {
                 return cdr(eval(cadr(expr), env));
             }
 
-            else if (eq(first, 'cons')) {
+            else if (eq(first, 'cons') === true) {
                 return cons(
                     eval(cadr(expr), env),
                     eval(caddr(expr), env));
             }
 
-            else if (eq(first, 'cond')) {
+            else if (eq(first, 'cond') === true) {
                 return evcon(cdr(expr), env);
             }
 
@@ -47,12 +47,12 @@
             }
         }
 
-        else if (eq(caar(expr), 'label')) {
+        else if (eq(caar(expr), 'label') === true) {
             return eval(cons(caddar(expr), cdr(expr)),
                         cons(list(cadar(expr), car(expr)), env));
         }
 
-        else if (eq(caar(expr), 'lambda')) {
+        else if (eq(caar(expr), 'lambda') === true) {
             return eval(caddar(expr),
                         append(pair(cadar(expr), evlis(cdr(expr), env)),
                                 env));
