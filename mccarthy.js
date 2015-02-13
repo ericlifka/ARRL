@@ -142,7 +142,7 @@
 
     function assoc(expr, env) {
         if (eq(caar(env), expr) === true) {
-            return cadar(expr);
+            return cadar(env);
         }
         else {
             return assoc(expr, cdr(env));
