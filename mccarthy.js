@@ -1,11 +1,11 @@
 (function () {
 
     function eval(expr, env) {
-        if (atom(expr)) {
+        if (atom(expr) === true) {
             return assoc(expr, env);
         }
 
-        else if (atom(car(expr))) {
+        else if (atom(car(expr)) === true) {
             var first = car(expr);
 
             if (eq(first, 'quote') === true) {
